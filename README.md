@@ -23,4 +23,4 @@ Task kuvaa yhden tehtävän. dueDate on String muodossa.
 <hr></hr>
 
 - YouTube-demo:
-- APK: löytyy release/debug buildina
+- APK: https://github.com/Tuukkaleksi/Week1/releases/tag/week1
