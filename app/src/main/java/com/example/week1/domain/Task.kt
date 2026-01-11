@@ -1,6 +1,6 @@
 package com.example.week1.domain
 
-// Kuvaa yhden tehtävän rakenteen.
+// data class.
 data class Task(
     val id: Int,
     val title: String,

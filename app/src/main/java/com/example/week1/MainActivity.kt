@@ -14,7 +14,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
 
         setContent {
-            HomeScreen(tasks = TaskRepository.mockTasks)
+            HomeScreen(initialTasks = TaskRepository.mockTasks)
         }
     }
 }
