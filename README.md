@@ -24,3 +24,22 @@ Task kuvaa yhden tehtävän. dueDate on String muodossa.
 
 - YouTube-demo: https://www.youtube.com/watch?v=FU7NobRc-8c
 - APK: https://github.com/Tuukkaleksi/Week1/releases/tag/week1
+
+<hr></hr>
+
+# Week 2
+## Compose-tila
+- Jetpack Compose on deklaratiivinen UI: ruutu piirretään tilan (state) perusteella.
+- Kun state muuttuu, Compose tekee automaattisesti recompositionin ja päivittää UI:n ilman, että meidän tarvitsee käsin päivittää näkymää.
+
+## Miksi ViewModel
+- ViewModel myös mahdollistaa myöhemmin datalähteen vaihtamisen.
+- remember säilyttää tilan vain Composablen elinkaaren ajan, ja tila voi hävitä.
+- ViewModel säilyttää tilan paremmin elinkaaren yli, ja erottaa UI:n ja sovelluslogiikan.
+
+<hr></hr>
+
+- YouTube-demo: https://www.youtube.com/watch?v=QrSL9Pz6kcQ
+- APK: https://github.com/Tuukkaleksi/Week1/releases/tag/week2
+
+<hr></hr>
