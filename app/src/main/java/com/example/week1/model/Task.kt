@@ -1,4 +1,4 @@
-package com.example.week1.domain
+package com.example.week1.model
 
 // data class.
 data class Task(

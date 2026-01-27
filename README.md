@@ -43,3 +43,21 @@ Task kuvaa yhden tehtävän. dueDate on String muodossa.
 - APK: https://github.com/Tuukkaleksi/Week1/releases/tag/week2
 
 <hr></hr>
+
+# Week 3
+## MVVM
+- Model on sovelluksen data
+- View on UI
+- ViewModel on UI:n logiikka
+
+## Miksi MVVM
+- Logiikkaa ei sekoiteta Composen sisään joka on helpompi ylläpitää
+
+## Miten StateFlow toimii?
+- Kun arvo muuttuu, se emittoi uuden arvon kaikille listenereille
+- Compose muuntaa sen stateksi collectAsState() funktiolla
+
+## Kerrosrakenne
+- model/ -> dataluokat
+- viewmodel/ -> tilanhallinta
+- view/ -> UI

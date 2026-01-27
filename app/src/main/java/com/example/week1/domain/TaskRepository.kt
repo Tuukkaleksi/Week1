@@ -1,5 +1,7 @@
 package com.example.week1.domain
 
+import com.example.week1.model.Task
+
 // Simulointi tietokantaa (mockData)
 object TaskRepository {
     val mockTasks = listOf(
