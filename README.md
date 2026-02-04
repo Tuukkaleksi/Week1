@@ -61,3 +61,34 @@ Task kuvaa yhden tehtävän. dueDate on String muodossa.
 - model/ -> dataluokat
 - viewmodel/ -> tilanhallinta
 - view/ -> UI
+
+# Week 4
+## Navigointi Jetpack Composessa
+- Navigointi toteutetaan Single Activity mallilla: sovelluksessa on yksi Activity ja useita Composable ruutuja.
+- Ruutujen välinen siirtyminen tapahtuu Navigation-Compose kirjaston avulla.
+
+## NavController ja NavHost
+- NavController vastaa navigoinnista ja back stackista (navigate, popBackStack).
+- NavHost määrittelee sovelluksen reitit ja kertoo, mikä Composable näytetään kussakin reitissä.
+
+## Navigaatiorakenne
+- Sovelluksessa on kaksi ruutua:
+    - HomeScreen (tehtävälista)
+    - CalendarScreen (kalenterinäkymä)
+- Siirtyminen Home -> Calendar tapahtuu painikkeella.
+- Paluu tapahtuu joko back napilla tai popBackStack() kutsulla.
+
+## MVVM + navigointi
+- Sama TaskViewModel jaetaan HomeScreenin ja CalendarScreenin välillä.
+- ViewModel luodaan NavHostin tasolla, joten sitä ei luoda uudelleen navigoinnin aikana.
+- Molemmat ruudut lukevat saman StateFlow tilan collectAsState() funktion avulla.
+
+## CalendarScreen
+- Tehtävät ryhmitellään dueDate kentän perusteella.
+- Jokainen päivämäärä näytetään otsikkona ja sen alle kuuluvat tehtävät listana.
+- Näkymä havainnollistaa tehtävien sijoittumista eri päiville.
+
+## AlertDialog
+- Tehtävien lisäys ja muokkaus toteutetaan AlertDialogeilla.
+- addTask ja editTask eivät ole omia navigaatiokohteitaan.
+- Dialogit kutsuvat suoraan ViewModelin funktioita.

@@ -14,24 +14,23 @@ class TaskViewModel : ViewModel() {
     private val _tasks = MutableStateFlow<List<Task>>(emptyList())
     val tasks: StateFlow<List<Task>> = _tasks.asStateFlow()
 
-    init {
-        _tasks.value = TaskRepository.mockTasks
-    }
-
     private var nextId = 1
 
-    fun addTask(title: String, description: String) {
+    init {
+        _tasks.value = TaskRepository.mockTasks
+        nextId = (_tasks.value.maxOfOrNull { it.id } ?: 0) + 1
+    }
+
+    fun addTask(title: String, description: String, dueDate: String) {
         val newTask = Task(
             id = nextId++,
             title = title.trim(),
             description = description.trim(),
             priority = 1,
-            dueDate = "",
+            dueDate = dueDate.trim(),
             done = false
         )
-        _tasks.update {
-            it + newTask
-        }
+        _tasks.update { it + newTask }
     }
 
     fun toggleDone(id: Int) {
