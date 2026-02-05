@@ -85,6 +85,7 @@ fun HomeScreen(
             onDismiss = { },
             onAdd = { title, desc, due ->
                 vm.addTask(title, desc, due)
+                showAdd = false
             }
         )
     }
@@ -92,9 +93,15 @@ fun HomeScreen(
     selected?.let { task ->
         EditTaskDialog(
             task = task,
-            onDismiss = { },
-            onSave = { vm.updateTask(it); },
-            onDelete = { vm.removeTask(task.id); }
+            onDismiss = { selected = null },
+            onSave = {
+                vm.updateTask(it)
+                selected = null
+            },
+            onDelete = {
+                vm.removeTask(task.id)
+                selected = null
+            }
         )
     }
 }
